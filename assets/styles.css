@@ -74,4 +74,10 @@ footer p { max-width: 55rem; }
 @media (max-width: 720px) {
   .intro-grid, .section-heading, .pathways, .question-grid { grid-template-columns: 1fr; }
   .hero { min-height: 65vh; }
+  h1 {
+    font-size: clamp(3.25rem, 16vw, 5.6rem);
+    line-height: .92;
+    letter-spacing: -.055em;
+    padding-block: .08em;
+  }
 }
