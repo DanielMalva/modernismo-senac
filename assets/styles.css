@@ -1,0 +1,77 @@
+:root {
+  --ink: #1d2d5b;
+  --paper: #fbf8f0;
+  --accent: #e75822;
+  --yellow: #efc84a;
+  --line: #c7c1b4;
+  --muted: #5e615f;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+}
+
+.skip-link { position: absolute; left: -9999px; }
+.skip-link:focus { left: 1rem; top: 1rem; z-index: 20; background: #fff; padding: .5rem; }
+
+.hero {
+  min-height: 75vh;
+  padding: clamp(2rem, 7vw, 7rem) clamp(1.3rem, 8vw, 10rem) 3rem;
+  display: grid;
+  align-content: center;
+  background: var(--ink);
+  color: var(--paper);
+  background-image: radial-gradient(circle at 92% 12%, var(--accent) 0 12%, transparent 12.4%), radial-gradient(circle at 83% 87%, var(--yellow) 0 5%, transparent 5.4%);
+}
+
+.eyebrow { margin: 0 0 .8rem; text-transform: uppercase; letter-spacing: .12em; font: 700 .75rem/1.2 Arial, sans-serif; }
+h1, h2, p { max-width: 70rem; }
+h1 { max-width: 50rem; margin: 0; font-size: clamp(4rem, 12vw, 10rem); line-height: .78; letter-spacing: -.07em; }
+h2 { margin: 0; font-size: clamp(2.2rem, 5vw, 4.7rem); line-height: .95; letter-spacing: -.045em; }
+.hero-copy { max-width: 36rem; margin: 2rem 0; font-size: clamp(1.15rem, 2.2vw, 1.65rem); }
+nav { display: flex; flex-wrap: wrap; gap: .8rem; font-family: Arial, sans-serif; }
+nav a { color: inherit; border: 1px solid rgba(255,255,255,.65); padding: .5rem .75rem; text-decoration: none; border-radius: 999px; }
+nav a:hover, nav a:focus { color: var(--ink); background: var(--paper); }
+
+.section { padding: clamp(3.5rem, 8vw, 8rem) clamp(1.3rem, 8vw, 10rem); }
+.intro-grid, .section-heading, .pathways { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 3rem; }
+.prose { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+.prose p:first-child { margin-top: 0; }
+.quote-band { color: var(--paper); background: var(--accent); }
+.quote-band p { margin: 0 0 1rem; font-size: clamp(1.6rem, 3.5vw, 3.2rem); line-height: 1.05; max-width: 60rem; }
+.quote-band span { font-family: Arial, sans-serif; }
+.section-heading > p { margin: 0; font-size: 1.15rem; align-self: end; }
+
+.filters { display: flex; flex-wrap: wrap; gap: .55rem; margin: 2.5rem 0 1.5rem; }
+.filter { border: 1px solid var(--ink); color: var(--ink); background: transparent; border-radius: 999px; padding: .5rem .75rem; font: 600 .85rem/1 Arial, sans-serif; cursor: pointer; }
+.filter:hover, .filter:focus, .filter.is-active { background: var(--ink); color: var(--paper); }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+.card { display: grid; margin: 0; border: 1px solid var(--line); background: #fffdf8; }
+.card[hidden] { display: none; }
+.card img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #e9e2d3; }
+.card figcaption { padding: .9rem; }
+.card figcaption span { display: block; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font: 700 .65rem/1.2 Arial, sans-serif; }
+.card strong { display: block; margin: .4rem 0 .2rem; font-size: 1.2rem; }
+.card small { color: var(--muted); font: .78rem/1.35 Arial, sans-serif; }
+
+.pathways { background: #eee8dc; }
+.pathways ol { margin: 0; padding-left: 1.4rem; font-size: 1.1rem; }
+.pathways li { margin: 0 0 1.2rem; padding-left: .3rem; }
+.questions { background: var(--yellow); }
+.question-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; margin-top: 2.5rem; background: var(--ink); border: 1px solid var(--ink); }
+.question-grid p { margin: 0; padding: 1.2rem; background: var(--yellow); font-size: 1.25rem; }
+
+footer { padding: 3rem clamp(1.3rem, 8vw, 10rem); background: var(--ink); color: var(--paper); font-size: .95rem; }
+footer p { max-width: 55rem; }
+.footer-note { color: #d7dbeb; font: .8rem Arial, sans-serif; }
+
+@media (max-width: 720px) {
+  .intro-grid, .section-heading, .pathways, .question-grid { grid-template-columns: 1fr; }
+  .hero { min-height: 65vh; }
+}
