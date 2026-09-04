@@ -76,13 +76,23 @@ nav a:hover, nav a:focus { color: var(--ink); background: var(--paper); }
 .reading-card h3 { margin: .15rem 0 .85rem; font-size: 1.42rem; line-height: 1.05; letter-spacing: -.025em; }
 .reading-card p { margin: 0; font-size: 1rem; }
 .reading-card .tag { margin-bottom: .7rem; color: var(--accent); text-transform: uppercase; letter-spacing: .08em; font: 700 .67rem/1.2 Arial, sans-serif; }
+.bookshelf-section { background: var(--ink); color: var(--paper); }
+.bookshelf-section h2 { color: var(--paper); }
+.bookshelf-section .section-heading > p { color: #d7dbeb; }
+.bookshelf { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 5vw, 4.5rem); max-width: 900px; margin: 3rem auto 0; }
+.bookshelf figure { margin: 0; }
+.bookshelf img { display: block; width: 100%; max-width: 250px; aspect-ratio: 2 / 3; object-fit: cover; margin: 0 auto; box-shadow: 12px 12px 0 rgba(239,200,74,.82); }
+.bookshelf figcaption { max-width: 250px; margin: 1.1rem auto 0; font-size: 1.05rem; }
+.bookshelf figcaption strong, .bookshelf figcaption em { display: block; }
+.bookshelf figcaption strong { color: var(--yellow); font-family: Arial, sans-serif; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
 
 footer { padding: 3rem clamp(1.3rem, 8vw, 10rem); background: var(--ink); color: var(--paper); font-size: .95rem; }
 footer p { max-width: 55rem; }
 .footer-note { color: #d7dbeb; font: .8rem Arial, sans-serif; }
 
 @media (max-width: 720px) {
-  .intro-grid, .section-heading, .pathways, .question-grid, .reading-grid { grid-template-columns: 1fr; }
+  .intro-grid, .section-heading, .pathways, .question-grid, .reading-grid, .bookshelf { grid-template-columns: 1fr; }
+  .bookshelf { max-width: 250px; }
   .hero { min-height: 65vh; }
   h1 {
     font-size: clamp(2.5rem, 11vw, 3.6rem);
